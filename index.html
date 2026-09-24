@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSM Video</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <span class="youtube-icon">▶</span>
+        <b>RSM</b><span>Video</span>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search videos..."
+            onkeyup="searchVideos()"
+        >
+        <button onclick="searchVideos()">🔍</button>
+    </div>
+
+<button onclick="showLogin()">🔐 Login</button>
+        Login
+    </button>
+
+</header>
+
+<nav class="categories">
+    <button onclick="filterVideos('all')">All</button>
+    <button onclick="filterVideos('comedy')">🤣 Comedy</button>
+    <button onclick="filterVideos('vlog')">🎥 Vlog</button>
+    <button onclick="filterVideos('music')">🎵 Music</button>
+    <button onclick="filterVideos('gaming')">🎮 Gaming</button>
+</nav>
+
+<main>
+
+    <section class="hero">
+
+        <h1>Welcome to RSM Video 🎬</h1>
+
+        <p>
+            Watch Comedy, Vlogs, Music & Entertainment Videos
+        </p>
+
+        <button onclick="scrollToVideos()">
+            ▶ Start Watching
+        </button>
+
+    </section>
+
+    <section class="videos-section" id="videosSection">
+
+        <h2>🔥 Trending Videos</h2>
+
+        <div id="videoContainer" class="video-grid"></div>
+
+    </section>
+
+</main>
+
+<div id="playerModal" class="modal">
+
+    <div class="player-box">
+
+        <button class="close" onclick="closePlayer()">
+            ✕
+        </button>
+
+        <video
+            id="videoPlayer"
+            controls
+            playsinline
+        ></video>
+
+        <h2 id="playerTitle"></h2>
+
+        <div class="player-actions">
+
+            <button onclick="likeVideo()">
+                👍 Like <span id="likeCount">0</span>
+            </button>
+
+            <button onclick="shareVideo()">
+                📤 Share
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>© 2026 RSM Video</p>
+
+    <p>
+        Home • About • Contact • Privacy
+    </p>
+
+</footer>
+
+<script src="app.js"></script>
+<script src="app.js"></script>
+<script type="module" src="auth.js"></script>
+<div id="loginBox" class="login-box">
+  <div class="login-card">
+
+    <h2>🔐 RSM Video</h2>
+    <p>Login / Create Account</p>
+
+    <input type="email" id="email" placeholder="📧 Email">
+
+    <input type="password" id="password" placeholder="🔑 Password">
+
+    <button onclick="doLogin()">Login</button>
+
+    <button onclick="doSignup()">Create Account</button>
+
+    <button onclick="closeLogin()">❌ Close</button>
+
+  </div>
+</div>
+</body>
+</html>
